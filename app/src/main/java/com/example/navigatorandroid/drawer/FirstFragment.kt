@@ -1,4 +1,4 @@
-package com.example.navigatorandroid
+package com.example.navigatorandroid.drawer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import com.example.navigatorandroid.R
 
 
 class FirstFragment : Fragment() {
@@ -19,7 +20,8 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         view.findViewById<TextView>(R.id.txtfirst).setOnClickListener {
-          val actiion = FirstFragmentDirections.navigatetosecondfragment().setNumber(20)
+          val actiion = com.example.navigatorandroid.drawer.FirstFragmentDirections.navigatetosecondfragment()
+              .setNumber(20)
           Navigation.findNavController(view).navigate(actiion)
         }
 

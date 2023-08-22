@@ -1,4 +1,4 @@
-package com.example.navigatorandroid
+package com.example.navigatorandroid.drawer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.navigatorandroid.R
 import com.google.android.material.navigation.NavigationView
-import java.security.AccessController
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.fragment);
         drawerLayout = findViewById(R.id.drawer_layout);
+        // setup nav with navigation view
         findViewById<NavigationView>(R.id.navigationView).setupWithNavController(navController)
 
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
