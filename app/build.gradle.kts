@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs")
+
+//    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -50,4 +53,7 @@ dependencies {
     val nav_version = "2.2.1"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+//    val nav_version = "2.7.0"
+//    implementation("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
 }

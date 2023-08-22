@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 
 class SecondFragment : Fragment() {
 
@@ -14,14 +15,15 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_second, container, false)
-
+        val args : SecondFragmentArgs by navArgs();
         val view = inflater.inflate(R.layout.fragment_second, container, false)
         view.findViewById<TextView>(R.id.txtsecond).setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.navigatetofirstfragment)
-        }
 
+
+            val actiion = SecondFragmentDirections.navigatetofirstfragment();
+            Navigation.findNavController(view).navigate(actiion)
+        }
+        view.findViewById<TextView>(R.id.txtsecond).text = args.number.toString()
         return  view;
     }
 

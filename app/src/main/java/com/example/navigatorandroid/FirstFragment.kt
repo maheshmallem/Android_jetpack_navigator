@@ -19,7 +19,8 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         view.findViewById<TextView>(R.id.txtfirst).setOnClickListener {
-          Navigation.findNavController(view).navigate(R.id.navigatetosecondfragment)
+          val actiion = FirstFragmentDirections.navigatetosecondfragment(22);
+          Navigation.findNavController(view).navigate(actiion)
         }
 
         return  view;
